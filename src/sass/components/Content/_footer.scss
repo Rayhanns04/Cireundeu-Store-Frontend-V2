@@ -1,0 +1,50 @@
+@import '../../helpers/mixins';
+@import '../../helpers/variables';
+
+.ftr__ms__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 22px;
+
+    .ftr__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        // width: 90%;
+
+        .ftr__left {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 267px;
+
+            p {
+                font-family: map-get($fonts, bold);
+                font-size: map-get($fonts-sizes, s-small-regular);
+                color: $black;
+            }
+        }
+
+        h3 {
+            font-family: map-get($fonts, bold);
+            font-size: map-get($fonts-sizes, s-regular);
+            color: $black;
+            margin-top: 17px;
+        }
+
+        @include dekstop {
+            width: 1041px;
+            flex-direction: row;
+            justify-content: space-between;
+
+            h3 {
+                margin-top: 0;
+            }
+        }
+    }
+}

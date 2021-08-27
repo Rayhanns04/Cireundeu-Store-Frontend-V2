@@ -1,0 +1,21 @@
+@import "./helpers/mixins";
+@import "./helpers/variables";
+
+@import "./components/app";
+@import "./components/header/navbar";
+@import "./components/header/alert";
+@import "./components/header/carousel";
+@import "./components/Content/newproducts";
+@import "./components/Content/cta";
+@import "./components/Content/footer";
+@import "./components/Menu/hero";
+@import "./components/Menu/category";
+@import "./components/Menu/products";
+@import "./components/Cart/cart";
+@import "./components/detailmenupopup";
+@import "./components/GasStove/form";
+@import "./components/search";
+@import "./components/Content/products";
+@import "./components/minidragable";
+@import "./components/Mobile/mobilesort";
+@import "./components/Mobile/mobileStorefront";

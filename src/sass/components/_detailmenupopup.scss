@@ -1,0 +1,175 @@
+@import '../helpers/mixins';
+@import '../helpers/variables';
+
+.dmp__ms__container {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100vh;
+    transition: 850ms;
+    z-index: 999;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.dmp__ms__container.active {
+    display: block;
+    opacity: 1;
+}
+
+.dmp__toggle__close {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    z-index: 999;
+    padding: 6px;
+    background-color: $darkGrey;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dmp__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+
+    .dmp__left {
+        // width: 234px;
+        // height: 262px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: $mediumGrey;
+        border-radius: 20px;
+        padding: 50px 30px;
+
+        img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @include dekstop {
+            margin-top: -30px;
+        }
+    }
+
+    .dmp__right {
+        margin-top: 43px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        p:nth-child(1) {
+            font-family: map-get($fonts, regular);
+            font-size: map-get($fonts-sizes, s-small);
+            text-transform: uppercase;
+            color: black;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: map-get($fonts, bold);
+            font-size: map-get($fonts-sizes, s-medium);
+            text-transform: uppercase;
+            color: black;
+            text-align: center;
+            margin-top: 8px;
+            width: 280px;
+        }
+
+        p:nth-child(3) {
+            font-family: map-get($fonts, regular);
+            font-size: map-get($fonts-sizes, s-medium);
+            color: black;
+            text-align: center;
+            margin: 22px 0 22px 0;
+        }
+
+        p:nth-child(4) {
+            font-family: map-get($fonts, regular);
+            font-size: map-get($fonts-sizes, s-regular);
+            color: black;
+            text-align: center;
+            width: 300px;
+        }
+
+        .dmp__toggle__container {
+            margin-top: 33px;
+
+            input {
+                width: 57px;
+                height: 45px;
+                border-radius: 10px;
+                border: 2px solid $mediumGrey;
+                outline: none;
+                text-align: center;
+                padding: 3px;
+            }
+
+            button {
+                width: 140px;
+                height: 45px;
+                text-align: center;
+                font-family: map-get($fonts, regular);
+                font-size: map-get($fonts-sizes, s-small);
+                color: white;
+                background-color: $regularPurple;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                margin-left: 10px;
+            }
+
+            button:hover {
+                background-color: $darkPurple;
+            }
+        }
+
+        .dmp__socialmedia__container {
+            position: absolute;
+            bottom: 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            p {
+                font-family: map-get($fonts, regular);
+                font-size: map-get($fonts-sizes, s-small-regular);
+                color: $veryDarkGrey;
+                text-transform: unset;
+            }
+
+            .dmp__socialmedia__itemcontainer {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 112px;
+                margin-top: 10px;
+            }
+        }
+
+        @include dekstop {
+            p:nth-child(4) {
+                width: 350px;
+            }
+        }
+    }
+}

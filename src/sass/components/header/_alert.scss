@@ -1,0 +1,27 @@
+@import "../../helpers/mixins";
+@import "../../helpers/variables";
+
+.alt__outer__container {
+	display: none;
+
+	.alt__top__container {
+		p {
+			padding: 22px 0 22px 0;
+			font-family: map-get($fonts, regular);
+			font-size: map-get($fonts-sizes, s-small);
+		}
+
+		hr {
+			border: 1px solid $darkGrey;
+			width: 100%;
+		}
+
+		@include dekstop {
+			width: 1044px;
+		}
+	}
+
+	@include dekstop {
+		display: block;
+	}
+}

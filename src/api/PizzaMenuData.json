@@ -1,0 +1,42 @@
+[
+	{
+		"id": 1,
+		"image": "https://i.imgur.com/9fl6Oy6.png",
+		"title": "Beras ramos Bandung dddddddd dddsssssssssssssssssssssssssssssssssssss",
+		"description": "Pizza dengan lelehan Mozzarella Premium.",
+		"price": "35000",
+		"sub_category": "Beras"
+	},
+	{
+		"id": 2,
+		"image": "https://i.imgur.com/9fl6Oy6.png",
+		"title": "Beras ramos Bandung",
+		"description": "Pizza dengan lelehan Mozzarella Premium.",
+		"price": "35000",
+		"sub_category": "Beras"
+	},
+	{
+		"id": 3,
+		"image": "https://i.imgur.com/9fl6Oy6.png",
+		"title": "Beras ramos Bandung",
+		"description": "Pizza dengan lelehan Mozzarella Premium.",
+		"price": "35000",
+		"sub_category": "Beras"
+	},
+	{
+		"id": 4,
+		"image": "https://i.imgur.com/9fl6Oy6.png",
+		"title": "Beras ramos Bandung",
+		"description": "Pizza dengan lelehan Mozzarella Premium.",
+		"price": "35000",
+		"sub_category": "Beras"
+	},
+	{
+		"id": 5,
+		"image": "https://i.imgur.com/9fl6Oy6.png",
+		"title": "Beras ramos Bandung",
+		"description": "Pizza dengan lelehan Mozzarella Premium.",
+		"price": "35000",
+		"sub_category": "Beras"
+	}
+]

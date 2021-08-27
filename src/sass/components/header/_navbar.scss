@@ -1,0 +1,68 @@
+@import "../../helpers/mixins";
+@import "../../helpers/variables";
+
+.nv__main__container {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 21px 0 21px 0;
+
+	@include dekstop {
+		width: 1044px;
+	}
+
+	.nv__container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+
+		.nv__logo {
+			font-family: map-get($fonts, bold);
+			font-size: map-get($fonts-sizes, s-medium);
+			outline: none;
+			text-decoration: none;
+			color: $black;
+		}
+
+		.nav__right__item {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 38px;
+			height: 38px;
+			margin-left: 13px;
+			background-color: $darkGrey;
+			border-radius: 50%;
+			cursor: pointer;
+
+			.nv__cartcount__container {
+				position: absolute;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				top: -8px;
+				left: 20px;
+				width: 26px;
+				height: 26px;
+				border-radius: 50%;
+				background-color: $regularPurple;
+				cursor: pointer;
+
+				p {
+					margin-top: 2px;
+					font-family: map-get($fonts, bold);
+					font-size: map-get($fonts-sizes, s-extra-small);
+					color: $white;
+				}
+			}
+		}
+	}
+}

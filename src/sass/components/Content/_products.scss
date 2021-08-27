@@ -1,0 +1,303 @@
+@import "../../helpers/mixins";
+@import "../../helpers/variables";
+
+.prd__main__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+
+	.prd__container {
+		position: relative;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include dekstop {
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: space-between;
+			width: 1044px;
+			// border: 1px solid red;
+			margin-top: 42px;
+		}
+
+		.prd__container__left {
+			display: none;
+
+			@include dekstop {
+				width: 277px;
+				background-color: $darkPurple;
+				padding: 19px 23px;
+				display: flex;
+				flex-direction: column;
+				border-radius: 10px;
+
+				h2 {
+					cursor: pointer;
+					font-family: "Poppins", sans-serif;
+					font-weight: 700;
+					font-size: map-get($fonts-sizes, s-medium);
+					color: white;
+				}
+
+				.left__ctgr__dropdown {
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					margin-top: 25px;
+				}
+			}
+		}
+
+		.prd__container__right {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			// border: 1px solid green;
+
+			@include dekstop {
+				width: 735px;
+				align-items: unset;
+			}
+
+			.prd__container__header {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin: 30px 0 0 0;
+
+				@include dekstop {
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-between;
+					margin: 0 0 31px 0;
+				}
+
+				.prd__container__searchmobile {
+					position: relative;
+					width: 95%;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+
+					input[type="text"] {
+						width: 100%;
+						padding: 14px 14px 14px 44px;
+						font-family: map-get($fonts, regular);
+						font-size: map-get($fonts-sizes, s-regular);
+						color: #000000;
+						border-radius: 10px;
+						border: 2px solid #f4f4f4;
+						outline: none;
+					}
+
+					input::placeholder {
+						color: #000000;
+						opacity: 1;
+					}
+
+					img {
+						position: absolute;
+						left: 15px;
+						top: 35%;
+						z-index: 2;
+					}
+
+					@include dekstop {
+						justify-content: unset;
+						align-items: unset;
+
+						input[type="text"] {
+							width: 171px;
+							width: 15.5rem;
+							padding: 12px 12px 12px 40px;
+							font-family: map-get($fonts, regular);
+							font-size: map-get($fonts-sizes, s-small);
+						}
+					}
+				}
+
+				.prd__ctgr__container {
+					width: 95%;
+					display: flex;
+					flex-direction: row;
+					align-items: flex-start;
+					justify-content: space-between;
+					margin: 10px 22px 25px 22px;
+					position: relative;
+
+					@include dekstop {
+						display: none;
+					}
+
+					.ctgr__link {
+						width: 48%;
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						align-items: center;
+						border: 2px solid #efefef;
+						padding: 8px 12px;
+						border-radius: 5px;
+						text-decoration: none;
+						outline: none;
+
+						p {
+							font-family: map-get($fonts, regular);
+							font-size: map-get($fonts-sizes, s-regular);
+							color: black;
+						}
+					}
+				}
+
+				.dropdownfilter {
+					display: none;
+
+					@include dekstop {
+						display: block;
+					}
+				}
+			}
+
+			.prd__container__items {
+				width: 95%;
+				display: grid;
+				grid-gap: 13px;
+				grid-template-columns: repeat(2, minmax(172px, 1fr));
+
+				@include dekstop {
+					width: 100%;
+					grid-template-columns: repeat(4, minmax(172px, 1fr));
+				}
+
+				.prd__container__singleitem {
+					position: relative;
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					padding: 0 0 60px 0;
+
+					background-color: white;
+					border-radius: 10px;
+					box-shadow: 0px 8px 24px 2px rgba(54, 59, 100, 0.08);
+
+					.prd__singleitem__thumb {
+						width: 100%;
+						height: 156px;
+						object-fit: cover;
+						border-radius: 10px 10px 0px 0px;
+					}
+
+					.prd__singleitem__content {
+						width: 80%;
+						height: 68px;
+						margin: 16px 0 0 0;
+
+						h4 {
+							display: -webkit-box;
+							-webkit-line-clamp: 2;
+							-webkit-box-orient: vertical;
+							overflow: hidden;
+
+							font-family: map-get($fonts, regular);
+							font-size: 0.75em;
+							font-weight: 400;
+							color: $darkBlue;
+							margin: 0 0 8px 0;
+
+							@media (min-width: 500px) and (max-width: 900px) {
+								font-size: 1rem;
+							}
+						}
+
+						p {
+							font-family: map-get($fonts, regular);
+							font-size: map-get($fonts-sizes, s-small);
+							font-weight: 600;
+							color: $darkBlue;
+						}
+					}
+
+					// Action
+					.prd__singleitem__action {
+						position: absolute;
+
+						width: 80%;
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						bottom: 20px;
+						justify-content: space-between;
+
+						.prd__action__fastqty {
+							width: 80px;
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							justify-content: space-between;
+
+							.prd__fastqty__min {
+								background-color: $darkPurple;
+								display: flex;
+								flex-direction: column;
+								justify-content: center;
+								align-items: center;
+								border-radius: 100%;
+								padding: 5px;
+								cursor: pointer;
+							}
+
+							input[type="number"] {
+								width: 22px;
+								-moz-appearance: textfield;
+								appearance: textfield;
+								font-family: map-get($fonts, regular);
+								font-size: map-get($fonts-sizes, s-small);
+								font-weight: 600;
+								color: $darkBlue;
+								background: none;
+								outline: none;
+								text-align: center;
+								border: none;
+							}
+
+							input[type="number"]::-webkit-inner-spin-button,
+							input[type="number"]::-webkit-outer-spin-button {
+								-webkit-appearance: none;
+								margin: 0;
+							}
+							.prd__fastqty__plus {
+								background-color: $darkPurple;
+								display: flex;
+								flex-direction: column;
+								justify-content: center;
+								align-items: center;
+								border-radius: 100%;
+								padding: 5px;
+								cursor: pointer;
+							}
+							border-radius: 100%;
+						}
+
+						// Cart
+						.prd__action__add {
+							cursor: pointer;
+							img:nth-child(2) {
+								width: 19.43px;
+								height: auto;
+								max-width: 19.43px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

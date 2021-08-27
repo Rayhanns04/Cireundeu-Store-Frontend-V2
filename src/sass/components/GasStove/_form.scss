@@ -1,0 +1,199 @@
+@import '../../helpers/mixins';
+@import '../../helpers/variables';
+
+.frmgs__ms__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    width: 100%;
+
+    .frmgs__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+
+        .frmgs__header {
+            margin-bottom: 20px;
+
+            h3 {
+                font-family: map-get($fonts, bold);
+                font-size: map-get($fonts-sizes, s-medium);
+                color: black;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            p {
+                font-family: map-get($fonts, regular);
+                font-size: map-get($fonts-sizes, s-small-regular);
+                color: black;
+                text-align: center;
+                width: 249px;
+            }
+
+            @include dekstop {
+                p {
+                    width: 100%;
+                }
+            }
+        }
+
+        .frmgs__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            .frmgs__content__top {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+                .frmgs__input {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    margin-top: 24px;
+                    width: 100%;
+
+                    label {
+                        font-family: map-get($fonts, bold);
+                        font-size: map-get($fonts-sizes, s-small-regular);
+                        color: black;
+                        margin-bottom: 10px;
+
+                        span {
+                            color: red;
+                        }
+                    }
+
+                    label:nth-child(1) {
+                        margin-top: 0;
+                    }
+
+                    input[type='text'],
+                    textarea,
+                    select,
+                    option {
+                        font-family: map-get($fonts, regular);
+                        font-size: map-get($fonts-sizes, s-small-regular);
+                        color: white;
+                        background: none;
+                        border: 4px solid $regularPurple;
+                        outline: none;
+                        padding: 15px 17px 15px 17px;
+                        border-radius: 10px;
+                        width: 100%;
+                        color: black;
+                    }
+
+                    input[type='text']::-webkit-input-placeholder,
+                    textarea::-webkit-input-placeholder {
+                        font-family: map-get($fonts, regular);
+                        font-size: map-get($fonts-sizes, s-small-regular);
+                        color: black;
+                    }
+
+                    @include dekstop {
+                        width: 320px;
+
+                        input[type='text'],
+                        textarea,
+                        select,
+                        option {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                @include dekstop {
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
+
+            .frmgs__content__bottom {
+                width: 100%;
+                margin-top: 24px;
+
+                .frmgs__input {
+                    label {
+                        font-family: map-get($fonts, bold);
+                        font-size: map-get($fonts-sizes, s-small-regular);
+                        color: black;
+                        margin-bottom: 10px;
+
+                        span {
+                            color: red;
+                        }
+                    }
+
+                    input[type='text'],
+                    textarea,
+                    select,
+                    option {
+                        font-family: map-get($fonts, regular);
+                        font-size: map-get($fonts-sizes, s-small-regular);
+                        color: white;
+                        background: none;
+                        border: 4px solid $regularPurple;
+                        outline: none;
+                        padding: 15px 17px 15px 17px;
+                        border-radius: 10px;
+                        width: 100%;
+                        color: black;
+                    }
+
+                    input[type='text']::-webkit-input-placeholder,
+                    textarea::-webkit-input-placeholder {
+                        font-family: map-get($fonts, regular);
+                        font-size: map-get($fonts-sizes, s-small-regular);
+                        color: black;
+                    }
+                }
+            }
+
+            @include dekstop {
+                margin-top: 30px;
+            }
+        }
+
+        button {
+            padding: 8px 6px;
+            width: 100%;
+            height: 48px;
+            background-color: $regularPurple;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            margin-top: 36px;
+
+            a {
+                color: white;
+                font-family: map-get($fonts, bold);
+                font-size: map-get($fonts-sizes, s-small-regular);
+                text-decoration: none;
+            }
+        }
+
+        button:focus {
+            background-color: $darkPurple;
+        }
+
+        button:hover {
+            background-color: $darkPurple;
+        }
+
+        @include dekstop {
+            width: 1014px;
+        }
+    }
+}

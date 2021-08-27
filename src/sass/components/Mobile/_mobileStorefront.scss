@@ -1,0 +1,100 @@
+@import "../../helpers/mixins";
+@import "../../helpers/variables";
+
+.mstf__main__container {
+	position: absolute;
+	background-color: white;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	overflow: hidden;
+
+	display: flex;
+	flex-direction: column;
+
+	@include dekstop {
+		display: none;
+	}
+
+	.mstf__container {
+		position: relative;
+		width: 100%;
+
+		.mstf__header {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			padding: 24px 22px 24px 22px;
+			cursor: pointer;
+
+			h1 {
+				font-family: map-get($fonts, bold);
+				font-size: map-get($fonts-sizes, s-regular);
+				margin-left: 28px;
+			}
+		}
+
+		.mstf__border1 {
+			width: 100%;
+			border: 1px solid #d3d3d3;
+		}
+	}
+
+	.mstf__content {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		margin-top: 16px;
+
+		.mstf__content__item {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			padding: 16px 22px 16px 22px;
+			cursor: pointer;
+
+			.mstf__border1.footer {
+				width: 100%;
+				border: 1px solid #d3d3d3;
+			}
+
+			.mstf__item__footer {
+				width: 100%;
+				margin-left: 28px;
+
+				.mstf__item__footer__left {
+					width: 100%;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-between;
+					margin-bottom: 28px;
+
+					p {
+						width: 80%;
+						word-break: break-all;
+						font-family: map-get($fonts, bold);
+						font-size: map-get($fonts-sizes, s-small-regular);
+					}
+
+					img {
+						margin-right: 16px;
+					}
+				}
+			}
+		}
+
+		.mstf__item__footer.sub {
+			padding-left: 40px;
+
+			.mstf__subtext {
+				text-overflow: ellipsis;
+				overflow: hidden;
+				width: 80%;
+			}
+		}
+	}
+}

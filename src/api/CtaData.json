@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"name": "PENGIRIMAN MURAH",
+		"desc": "For order over above Rp100.000",
+		"image": "https://i.imgur.com/7jlGVFO.png"
+	},
+	{
+		"id": 2,
+		"name": "100% MONEY BACK",
+		"desc": "If product damaged",
+		"image": "https://i.imgur.com/wJOCvjC.png"
+	},
+	{
+		"id": 1,
+		"name": "DEDICATED SUPPORT",
+		"desc": "We provide support 24/7",
+		"image": "https://i.imgur.com/O9d2OBK.png"
+	}
+]

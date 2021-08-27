@@ -1,0 +1,83 @@
+// ----------------------- FONT FACE ---------------------------
+@font-face {
+	font-family: "Josefin Sans Strong";
+	src: url("../../assets/fonts/JosefinSans-Bold.woff2") format("woff2");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Josefin Sans Med";
+	src: url("../../assets/fonts/JosefinSans-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Josefin Sans SemsBold";
+	src: url("../../assets/fonts/JosefinSans-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Josefin Sans Reg";
+	src: url("../../assets/fonts/JosefinSans-Regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+// ----------------------- COLORS ---------------------------
+
+$lightPurple: #ca6a52;
+$mediumLightPurple: #8a3730;
+$regularPurple: #ca6a52;
+$darkPurple: #8a3730;
+
+$yellow: #ffc700;
+$blue: #0763cf;
+$black: #333333;
+$darkBlue: #363b64;
+
+$lightGrey: #fbfbfb;
+$mediumGrey: #f4f4f4;
+$darkGrey: #eaeaea;
+$veryDarkGrey: #828282;
+
+$white: #ffffff;
+
+// --------------------- RESPONSIVE WIDTH ---------------------
+
+$dekstop-responsive-width: 1133px;
+
+// --------------------- FONT FAMILY ---------------------
+
+$fonts: (
+	"regular": Poppins,
+	"medium": Josefin Sans Med,
+	"bold": Josefin Sans Strong,
+	"semiBold": Josefin Sans SemsBold,
+);
+
+$fonts-weight: (
+	"regular": 400,
+	"medium": 500,
+	"bold": 700,
+	"SuperBold": 900,
+);
+
+$fonts-sizes: (
+	"s-extra-small": 12px,
+	"s-small": 14px,
+	"s-small-regular": 16px,
+	"s-regular": 18px,
+	"s-extra-regular": 20px,
+	"s-medium": 25px,
+	"s-extra-medium": 50px,
+	"s-large": 80px,
+	"s-extra-large": 100px,
+);

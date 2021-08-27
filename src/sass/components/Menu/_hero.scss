@@ -1,0 +1,29 @@
+@import '../../helpers/mixins';
+@import '../../helpers/variables';
+
+.mnhero__container {
+    background-color: $lightPurple;
+    padding: 108px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    .mnhero__content {
+
+        h3 {
+            font-family: map-get($fonts, bold);
+            font-size: map-get($fonts-sizes, s-medium );
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-family: map-get($fonts, regular);
+            font-size: map-get($fonts-sizes, s-small-regular );
+        }
+        @include dekstop {
+            width: 1014px;
+        }
+    }
+}

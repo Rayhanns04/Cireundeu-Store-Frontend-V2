@@ -1,0 +1,47 @@
+[
+	{
+		"id": 1,
+		"name": "Kopi",
+		"sub_category": [
+			{
+				"name": "Kopi kencana"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"name": "Teh",
+		"sub_category": [
+			{
+				"name": "Teh hitam"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"name": "Kerajinan",
+		"sub_category": [
+			{
+				"name": "Kerajinan Kayu"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"name": "Bahan Pangan",
+		"sub_category": [
+			{
+				"name": "Beras"
+			}
+		]
+	},
+	{
+		"id": 5,
+		"name": "Minuman Sehat",
+		"sub_category": [
+			{
+				"name": "Jus wortel"
+			}
+		]
+	}
+]

@@ -22,13 +22,12 @@
 	width: 96%;
 
 	@include dekstop {
-		width: 1044px;
+		width: 1176px;
 	}
 }
 
 .app__bottom {
 	width: 100%;
 	position: sticky;
-	// bottom: 0;
 	top: 100%;
 }

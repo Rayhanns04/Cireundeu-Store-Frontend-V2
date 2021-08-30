@@ -1,19 +1,42 @@
 @import "../../helpers/mixins";
 @import "../../helpers/variables";
 
-.carousel {
+.carousel__main__container {
+	position: relative;
 	width: 100%;
 	height: 481px;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	overflow: hidden;
-	scroll-behavior: smooth;
 
-	img {
+	.carousel {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		border: 2px solid red;
 		width: 100%;
-		height: 100%;
-		flex-shrink: 0;
-		object-fit: cover;
+		height: 481px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		flex-wrap: nowrap;
+		overflow: hidden;
+		scroll-behavior: smooth;
+		margin: auto;
+
+		img {
+			width: 100%;
+			vertical-align: middle;
+			object-position: center;
+			height: 100%;
+			flex-shrink: 0;
+			object-fit: cover;
+
+			@include dekstop {
+				width: 1170px;
+			}
+		}
+
+		@include dekstop {
+			width: 1170px;
+		}
 	}
 }

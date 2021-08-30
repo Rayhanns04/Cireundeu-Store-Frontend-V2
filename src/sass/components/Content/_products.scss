@@ -17,9 +17,11 @@
 		@include dekstop {
 			flex-direction: row;
 			align-items: flex-start;
-			justify-content: space-between;
-			width: 1044px;
-			// border: 1px solid red;
+			justify-content: flex-start;
+			// Set this width number -> to set content width on dekstop version
+			width: 1170px;
+			border: 1px solid red;
+			overflow: hidden;
 			margin-top: 42px;
 		}
 
@@ -33,6 +35,7 @@
 				display: flex;
 				flex-direction: column;
 				border-radius: 10px;
+				margin-right: 32px;
 
 				h2 {
 					cursor: pointer;
@@ -52,14 +55,15 @@
 		}
 
 		.prd__container__right {
+			position: relative;
 			width: 100%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			// border: 1px solid green;
 
 			@include dekstop {
-				width: 735px;
+				// width: 735px;
+				width: 100%;
 				align-items: unset;
 			}
 
@@ -172,7 +176,8 @@
 
 				@include dekstop {
 					width: 100%;
-					grid-template-columns: repeat(4, minmax(172px, 1fr));
+					// Grid for dekstop -> set this number auto-fill | number
+					grid-template-columns: repeat(5, minmax(172px, 172px));
 				}
 
 				.prd__container__singleitem {

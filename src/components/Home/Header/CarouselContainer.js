@@ -30,17 +30,19 @@ const CarouselContainer = () => {
 	}, [images]);
 
 	return (
-		<div className="carousel">
-			{all.map((item, index) => {
-				return (
-					<img
-						key={index}
-						src={`${item.image}`}
-						alt="images"
-						ref={images[index]}
-					/>
-				);
-			})}
+		<div className="carousel__main__container">
+			<div className="carousel">
+				{all.map((item, index) => {
+					return (
+						<img
+							key={index}
+							src={`${item.image}`}
+							alt="images"
+							ref={images[index]}
+						/>
+					);
+				})}
+			</div>
 		</div>
 	);
 };

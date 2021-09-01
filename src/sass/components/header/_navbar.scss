@@ -2,7 +2,6 @@
 @import "../../helpers/variables";
 
 .nv__main__container {
-	position: relative;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -10,11 +9,8 @@
 	width: 100%;
 	padding: 21px 0 21px 0;
 
-	// @include dekstop {
-	// 	width: 1044px;
-	// }
-
 	.nv__container {
+		position: relative;
 		display: flex;
 		flex-direction: row;
 		align-items: center;

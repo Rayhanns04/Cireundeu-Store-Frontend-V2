@@ -13,29 +13,37 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-
 		@include dekstop {
+			height: 100%;
 			flex-direction: row;
 			align-items: flex-start;
 			justify-content: flex-start;
+
 			// Set this width number -> to set content width on dekstop version
 			width: 1170px;
-			border: 1px solid red;
-			overflow: hidden;
 			margin-top: 42px;
+		}
+
+		.prd__container__left::-webkit-scrollbar {
+			display: none;
 		}
 
 		.prd__container__left {
 			display: none;
 
 			@include dekstop {
-				width: 277px;
-				background-color: $darkPurple;
-				padding: 19px 23px;
+				position: sticky;
+				position: -webkit-sticky;
+				z-index: 9999;
 				display: flex;
 				flex-direction: column;
+				top: 32px;
+				width: 277px;
+				height: auto;
+				padding: 19px 23px;
 				border-radius: 10px;
 				margin-right: 32px;
+				background-color: $darkPurple;
 
 				h2 {
 					cursor: pointer;
@@ -45,11 +53,18 @@
 					color: white;
 				}
 
+				.left__ctgr__dropdown::-webkit-scrollbar {
+					display: none;
+				}
+
 				.left__ctgr__dropdown {
 					width: 100%;
 					display: flex;
 					flex-direction: column;
 					margin-top: 25px;
+
+					max-height: 495px;
+					overflow: auto;
 				}
 			}
 		}

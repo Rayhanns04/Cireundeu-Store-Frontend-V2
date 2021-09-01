@@ -1,0 +1,64 @@
+.pagination__container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 16px;
+}
+
+.pagination__container li {
+	list-style: none;
+	margin: 0 4px;
+}
+
+.pagination__container a {
+	text-decoration: none;
+	padding: 1px 6px;
+	font-family: map-get($fonts, regular);
+	font-size: map-get($fonts-sizes, s-extra-small);
+	color: $grey2;
+
+	cursor: pointer;
+}
+
+.pagination__active a {
+	font-family: map-get($fonts, medium);
+	font-size: map-get($fonts-sizes, s-small);
+
+	color: $lightPurple;
+	border-bottom: 2px solid $lightPurple;
+}
+
+.break-me {
+	list-style: none;
+}
+
+.pagination__prev {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	list-style-type: none;
+}
+
+.pagination__prev a {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	text-decoration: none;
+}
+
+.pagination__next {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	list-style-type: none;
+}
+
+.pagination__next a {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	text-decoration: none;
+}

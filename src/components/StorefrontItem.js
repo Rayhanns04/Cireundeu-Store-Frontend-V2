@@ -72,7 +72,7 @@ const StorefrontItem = ({ subCategory, item, getCategoryName, setIsOpen }) => {
 						onClick={() => {
 							getCategoryName(itemSub.name);
 
-							setTimeout(() => {
+							return setTimeout(() => {
 								return setIsOpen();
 							}, 500);
 						}}

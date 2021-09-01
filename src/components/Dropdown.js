@@ -27,6 +27,7 @@ const Dropdown = ({
 		width: ${DropDownConfig.dropdown_width}%;
 		position: relative;
 		margin-bottom: ${DropDownConfig.dropdown_mb}px;
+		border: 3px sold #ffffff;
 	`;
 
 	const InputSelect = styled.div`
@@ -64,6 +65,13 @@ const Dropdown = ({
 		z-index: 1;
 		display: ${isOpen ? "block" : "none"};
 		cursor: pointer;
+
+		max-height: 183px;
+		overflow: auto;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	`;
 
 	const Tittle = styled.p`
@@ -110,7 +118,7 @@ const Dropdown = ({
 					return (
 						<OptionItemContainer
 							key={id}
-							onClick={() => getCategoryName(item.name)}
+							onClick={() => getCategoryName(item.id)}
 						>
 							<OptionItem>{item.name}</OptionItem>
 						</OptionItemContainer>

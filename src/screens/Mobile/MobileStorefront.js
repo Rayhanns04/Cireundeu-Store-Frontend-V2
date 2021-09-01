@@ -17,8 +17,6 @@ const getStorefront = () => {
 };
 
 const MobileStorefront = () => {
-	const [isOpen, setIsOpen] = useState(false);
-
 	const { data, isError, isFetching, isSuccess } = useQuery(
 		"storefront",
 		getStorefront,

@@ -59,7 +59,7 @@ const DropDownConfig = {
 	chevron_bottom: 30,
 
 	// ============== styled optionitem
-	optionitem_ptb: 18,
+	optionitem_ptb: 14,
 	optionitem_plr: 20,
 };
 
@@ -99,6 +99,7 @@ const Products = () => {
 	// ===================== State
 	const [isOpen, setIsOpen] = useState(false);
 	const [searchTerm, setSearchTerm] = useState("");
+	const [page, setPage] = useState(1);
 
 	const {
 		mobileSortIsOpen,
@@ -166,6 +167,8 @@ const Products = () => {
 			<div className="prd__container">
 				{/* Draggable component */}
 				<MiniDragable />
+
+				{/* Content left */}
 				<div className="prd__container__left">
 					<h2 onClick={() => setGlobalCategory("")}>
 						Pilih Kategori
@@ -175,9 +178,11 @@ const Products = () => {
 						{isError && (
 							<p>There was an error processing your request</p>
 						)}
+
 						{handleMappingCategorySelect}
 					</div>
 				</div>
+
 				<div className="prd__container__right">
 					{/* ============= Category Container */}
 					<div className="prd__container__header">
@@ -194,7 +199,7 @@ const Products = () => {
 
 						{/* Responsive filtering */}
 						<div className="prd__ctgr__container">
-							<Link
+							<div
 								className="ctgr__link"
 								onClick={() =>
 									setMobileFilterIsOpen(!mobileFilterIsOpen)
@@ -202,9 +207,9 @@ const Products = () => {
 							>
 								<p>Etalase Toko</p>
 								<img src={ChevronDownBlack} alt="chveron" />
-							</Link>
+							</div>
 
-							<Link
+							<div
 								className="ctgr__link"
 								onClick={() =>
 									setMobileSortIsOpen(!mobileSortIsOpen)
@@ -212,7 +217,7 @@ const Products = () => {
 							>
 								<p>Urutkan</p>
 								<img src={ChevronDownBlack} alt="chveron" />
-							</Link>
+							</div>
 						</div>
 
 						<div className="dropdownfilter">
@@ -234,7 +239,9 @@ const Products = () => {
 						Cart={Cart}
 						categoryName={globalCategory}
 						sorts={globalSorts}
+						page={page}
 					/>
+
 					{isFetching && (
 						<div className="prd__container__loading">
 							<Ripple

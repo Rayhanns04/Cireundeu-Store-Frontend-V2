@@ -1,0 +1,5 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/solh8599/public_html/laravel-app/cireunde-store-admin
+    # - /bin/cp -r * $DEPLOYPATH #copy all from root
+       - /bin/cp -r ./public/* $DEPLOYPATH/public_html/

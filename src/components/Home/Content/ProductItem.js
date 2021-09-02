@@ -7,6 +7,7 @@ import {
 } from "../../../redux/Shopping/Shopping-action";
 import Chevron from "../../../assets/images/Chevron";
 import ReactPaginate from "react-paginate";
+import Swal from "sweetalert2";
 
 const ProductItem = ({
 	products,
@@ -58,6 +59,26 @@ const ProductItem = ({
 	useEffect(() => {
 		getFromApi();
 	}, [categoryName, searchTerm]);
+
+	const handleSuccessAdd = (id, qty) => {
+		const Toast = Swal.mixin({
+			toast: true,
+			position: "top-end",
+			showConfirmButton: false,
+			timer: 10000,
+			timerProgressBar: true,
+			didOpen: (toast) => {
+				toast.addEventListener("mouseenter", Swal.stopTimer);
+				toast.addEventListener("mouseleave", Swal.resumeTimer);
+			},
+		});
+
+		handleAddToCart(id, parseInt(qty));
+		Toast.fire({
+			icon: "success",
+			title: "Success add to card",
+		});
+	};
 
 	const handlePageClick = (data) => {
 		console.log(data.selected + 1);
@@ -153,7 +174,7 @@ const ProductItem = ({
 							<div
 								className="prd__action__add"
 								onClick={() =>
-									handleAddToCart(item.id, parseInt(qty))
+									handleSuccessAdd(item.id, parseInt(qty))
 								}
 							>
 								<img src={Cart} alt="cart" />

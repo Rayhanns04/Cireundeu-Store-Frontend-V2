@@ -3,9 +3,20 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { connect } from "react-redux";
 import "../../sass/main.scss";
+import Swal from "sweetalert2";
 
 const getPhoneNumber = () => {
 	const URL = "https://admin.store.cireundeu.solusi.vip/api/phones";
+	const response = axios
+		.get(URL)
+		.then((res) => res.data.data)
+		.catch((e) => console.log(e));
+
+	return response;
+};
+
+const getPaymentTypes = () => {
+	const URL = "https://admin.store.cireundeu.solusi.vip/api/typeofpayment";
 	const response = axios
 		.get(URL)
 		.then((res) => res.data.data)
@@ -38,6 +49,12 @@ const CartForm = ({ cart, totalFee, cartCount, shippingFee }) => {
 		staleTime: 3000,
 		refetchIntervalInBackground: 3000,
 	});
+
+	const { data: typeOfPayments, isSuccess: isSuccessTypesofPayments } =
+		useQuery("typeofpayments", getPaymentTypes, {
+			staleTime: 3000,
+			refetchIntervalInBackground: 3000,
+		});
 
 	// ----- Wa Chat Generator -----
 	const GreetingWA = () => {
@@ -95,7 +112,7 @@ const CartForm = ({ cart, totalFee, cartCount, shippingFee }) => {
 		};
 
 		const generateItem = () => {
-			let urlWA = `https://api.whatsapp.com/send?phone=${phone}&text=${GreetingWA()}%0D%0A%0D%0A${DetailShipping()}%0D%0A%0D%0AList%20Pesanan%20:${MessageMap}${TotalPembayaranWA()}`;
+			let urlWA = `https://api.whatsapp.com/send?phone=62${phone}&text=${GreetingWA()}%0D%0A%0D%0A${DetailShipping()}%0D%0A%0D%0AList%20Pesanan%20:${MessageMap}${TotalPembayaranWA()}`;
 			return urlWA;
 		};
 
@@ -113,9 +130,19 @@ const CartForm = ({ cart, totalFee, cartCount, shippingFee }) => {
 	};
 
 	const validationButton = () => {
-		if (totalFee < 85000) {
-			alert("Maaf minimal belanja Rp 85.000");
+		if (totalFee === 0) {
+			Swal.fire({
+				icon: "error",
+				title: "Mohon Maaf",
+				text: "Keranjang anda masih kosong!",
+			});
 			setDynamicLink(null);
+		} else if (fullName === "" && paymentMethod === "" && address === "") {
+			Swal.fire({
+				icon: "error",
+				title: "Mohon Maaf",
+				text: "Mohon lengkapi form pengiriman!",
+			});
 		} else {
 			setDynamicLink(loopingInvoice());
 		}
@@ -146,11 +173,14 @@ const CartForm = ({ cart, totalFee, cartCount, shippingFee }) => {
 							name="Type of payment"
 							value={paymentMethod}
 						>
-							<option value="Bank Transfer">Bank Transfer</option>
-							<option value="Ovo Payment">Ovo Payment</option>
-							<option value="COD (Cash on Delivery)">
-								COD (Cash on Delivery)
-							</option>
+							{isSuccessTypesofPayments &&
+								typeOfPayments.map((item, id) => {
+									return (
+										<option value={item.name}>
+											{item.name}
+										</option>
+									);
+								})}
 						</select>
 					</div>
 

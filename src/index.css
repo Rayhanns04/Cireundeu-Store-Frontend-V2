@@ -4,6 +4,23 @@
 	box-sizing: border-box;
 }
 
+/* Swal css */
+.swal2-title {
+	font-family: "Poppins", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.swal2-html-container {
+	font-family: "Poppins", sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+}
+
+.swal2-styled.swal2-confirm {
+	background-color: #8a3730 !important;
+}
+
 body {
 	position: relative;
 	min-height: 100vh;

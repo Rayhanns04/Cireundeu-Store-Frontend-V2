@@ -97,6 +97,10 @@
 						margin-top: 22px;
 						object-fit: contain;
 
+						.crt__sigle__btnDel {
+							cursor: pointer;
+						}
+
 						.crt__sigle__toggle {
 							display: flex;
 							flex-direction: row;

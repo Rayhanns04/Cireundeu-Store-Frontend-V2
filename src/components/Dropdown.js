@@ -110,7 +110,9 @@ const Dropdown = ({
 			</InputSelect>
 
 			<Select>
-				<OptionItemContainer onClick={() => getCategoryName(category)}>
+				<OptionItemContainer
+					onClick={() => getCategoryName("Semua Produk")}
+				>
 					<OptionItem>{category ? "Semua Produk" : ""}</OptionItem>
 				</OptionItemContainer>
 

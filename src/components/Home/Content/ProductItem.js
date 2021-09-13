@@ -24,10 +24,16 @@ const ProductItem = ({
 	const [totalProduct, setTotalProduct] = useState();
 	const [perPage, setPerPage] = useState();
 
+	console.log(categoryName);
+
 	const getFromApi = (current_page) => {
 		return axios
 			.get(
-				`https://admin.store.cireundeu.solusi.vip/api/products?page=${current_page}&per_page=40&sub=${categoryName}&title=${searchTerm}`
+				`https://admin.store.cireundeu.solusi.vip/api/products?page=${current_page}&per_page=40${
+					categoryName === "Semua Produk"
+						? ""
+						: "&sub=" + categoryName
+				}&title=${searchTerm}`
 			)
 			.then((res) => {
 				dispatch(getProductsSuccess(res.data.data));

@@ -53,6 +53,7 @@ const CartForm = ({ cart, totalFee, cartCount, shippingFee }) => {
 	const { data: typeOfPayments, isSuccess: isSuccessTypesofPayments } =
 		useQuery("typeofpayments", getPaymentTypes, {
 			staleTime: 3000,
+			refetchInterval: 3000,
 			refetchIntervalInBackground: 3000,
 		});
 
